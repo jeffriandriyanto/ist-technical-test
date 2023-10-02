@@ -3,8 +3,8 @@
     <v-card class="pa-4 ma-4" flat>
       <div class="mb-6 d-flex justify-space-between align-center">
         <section>
-          <div class="text-h5 font-weight-bold">Selamat Datang</div>
-          <div class="text-body-1">Masuk ke Akun Anda</div>
+          <div class="text-h5 font-weight-bold">Welcome</div>
+          <div class="text-body-1">Login to Your Account</div>
         </section>
         <section>
           <div class="d-flex justify-center gap1 logo-header">
@@ -112,10 +112,10 @@ export default {
 
 <style lang="scss">
 #loginApp {
-  // background: linear-gradient(-45deg, #E31E23, #B79164, #FFFFFF, #E31E23);
-  // background-size: 400% 400%;
+  background: linear-gradient(-45deg, #E31E23, #B79164, #FFFFFF, #E31E23);
+  background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  background: #f0f0f1;
+  // background: #f0f0f1;
   height: 100vh;
 }
 
