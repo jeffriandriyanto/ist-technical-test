@@ -10,12 +10,14 @@
         class="mr-2"
         @click="drawer = true"
       ></v-app-bar-nav-icon>
-      <img :src="user?.image" height="38px" class="mr-4" />
-      <div class="text-h6 font-weight-bold">{{ user?.company?.name }}</div>
+      <img v-if="smU" :src="user?.image" height="38px" class="mr-4" />
+      <div v-if="smU" class="text-h6 font-weight-bold">
+        {{ user?.company?.name }}
+      </div>
 
       <v-spacer />
 
-      <div class="d-flex gap10">
+      <div v-if="smU" class="d-flex gap10">
         <NuxtLink to="/home" class="link">Home</NuxtLink>
         <NuxtLink to="/about" class="link">About</NuxtLink>
         <NuxtLink to="/contact" class="link">Contact</NuxtLink>
@@ -61,10 +63,39 @@
       </v-menu>
     </v-app-bar>
 
-    <!-- <AppAuthenticatedNav
-      :drawer="drawer"
-      :closeDrawer="() => (drawer = false)"
-    /> -->
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+      dense
+      width="240"
+      color="primary"
+    >
+      <v-list nav>
+        <template>
+          <v-list-item to="/home">
+            <v-list-item-subtitle class="white--text">
+              Home
+            </v-list-item-subtitle>
+          </v-list-item>
+          <v-list-item to="/about">
+            <v-list-item-subtitle class="white--text">
+              About
+            </v-list-item-subtitle>
+          </v-list-item>
+          <v-list-item to="/contact">
+            <v-list-item-subtitle class="white--text">
+              Contact
+            </v-list-item-subtitle>
+          </v-list-item>
+          <v-list-item to="/products">
+            <v-list-item-subtitle class="white--text">
+              Product
+            </v-list-item-subtitle>
+          </v-list-item>
+        </template>
+      </v-list>
+    </v-navigation-drawer>
 
     <v-main>
       <div class="authenticated-bg pa-4">
